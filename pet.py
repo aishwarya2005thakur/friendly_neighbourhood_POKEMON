@@ -86,7 +86,7 @@ foot_right = c.create_oval(250, 320, 330, 360, outline=c.body_color, fill=c.body
 # Eyes and pupils
 eye_left = c.create_oval(130, 110, 160, 170, outline='black', fill='white')
 pupil_left = c.create_oval(140, 145, 150, 155, outline='black', fill='black')
-pupil_outer_left = c.create_oval(140, 145, 150, 155, outline='blue', fill='black')
+pupil_outer_left = c.create_oval(155,160,165,170, outline='blue', fill='black')
 eye_right = c.create_oval(230, 110, 260, 170, outline='black', fill='white')
 pupil_outer_right = c.create_oval(140, 145, 150, 155, outline='blue', fill='black')
 pupil_right = c.create_oval(240, 145, 250, 155, outline='black', fill='black')
