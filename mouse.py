@@ -9,10 +9,6 @@ def draw_circle(color, radius, x, y):
     turtle.circle(radius)
     turtle.end_fill()
 
-def draw_ear(x, y):
-    draw_circle("gray", 30, x, y)
-    draw_circle("pink", 20, x, y + 10)  # Inner ear
-
 def draw_body():
     draw_circle("gray", 70, 0, -90)  # Body
 
@@ -25,29 +21,29 @@ def draw_face():
     draw_circle("pink", 15, 0, -40)      # Nose
 
 def draw_tail():
-    turtle.pendown()
+    turtle.penup()
     turtle.goto(0, -90)
-    turtle.setheading(-30)
-    turtle.forward(50)  # Tail
+    turtle.setheading(270)  # Point downwards for the tail
+    turtle.pendown()
+    # Draw a curly tail similar to a pig's
+    for _ in range(3):  # Three loops for the curl
+        turtle.circle(5, 180)  # Half circle
+        turtle.right(180)  # Change direction for next half
     turtle.penup()
 
-def draw_limbs():
-    # Draw arms
-    draw_circle("gray", 20, -90, -70)  # Left arm
-    draw_circle("gray", 20, 90, -70)   # Right arm
-
-    # Draw legs
-    draw_circle("gray", 20, -40, -160)  # Left leg
-    draw_circle("gray", 20, 40, -160)   # Right leg
+def draw_ears():
+    # Draw mouse-like ears
+    draw_circle("gray", 25, -50, 20)  # Left ear (smaller and more rounded)
+    draw_circle("pink", 15, -50, 30)  # Inner left ear
+    draw_circle("gray", 25, 50, 20)   # Right ear (smaller and more rounded)
+    draw_circle("pink", 15, 50, 30)   # Inner right ear
 
 def main():
     turtle.speed(3)
     draw_body()          # Draw body first
-    draw_ear(-40, 20)   # Left ear
-    draw_ear(40, 20)    # Right ear
     draw_face()         # Draw face next
-    draw_limbs()        # Draw limbs
-    draw_tail()         # Draw tail last
+    draw_tail()         # Draw curly tail
+    draw_ears()         # Draw ears last
     turtle.hideturtle()
     turtle.done()
 
