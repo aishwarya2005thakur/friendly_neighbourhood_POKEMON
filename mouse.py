@@ -33,15 +33,15 @@ def draw_tail():
 
 def draw_ear(x, y):
     draw_circle("gray", 30, x, y)
-    draw_circle("pink", 20, x, y + 10)
+    draw_circle("pink", 25, x, y + 10) 
 
 def main():
     turtle.speed(3)
     draw_body()          # Draw body first
     draw_face()         # Draw face next
     draw_tail()         # Draw curly tail
-    draw_ear(-40, 20)   
-    draw_ear(40, 20)        # Draw ears last
+    draw_ear(-35, 22)   # Left ear
+    draw_ear(35, 22)         # Draw ears last
     turtle.hideturtle()
     turtle.done()
 
