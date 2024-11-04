@@ -31,19 +31,17 @@ def draw_tail():
         turtle.right(180)  # Change direction for next half
     turtle.penup()
 
-def draw_ears():
-    # Draw mouse-like ears
-    draw_circle("gray", 25, -50, 20)  # Left ear (smaller and more rounded)
-    draw_circle("pink", 15, -50, 30)  # Inner left ear
-    draw_circle("gray", 25, 50, 20)   # Right ear (smaller and more rounded)
-    draw_circle("pink", 15, 50, 30)   # Inner right ear
+def draw_ear(x, y):
+    draw_circle("gray", 30, x, y)
+    draw_circle("pink", 20, x, y + 10)
 
 def main():
     turtle.speed(3)
     draw_body()          # Draw body first
     draw_face()         # Draw face next
     draw_tail()         # Draw curly tail
-    draw_ears()         # Draw ears last
+    draw_ear(-40, 20)   
+    draw_ear(40, 20)        # Draw ears last
     turtle.hideturtle()
     turtle.done()
 
