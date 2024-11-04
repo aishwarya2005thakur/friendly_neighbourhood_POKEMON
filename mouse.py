@@ -13,24 +13,16 @@ def draw_ear(x, y):
     draw_circle("gray", 30, x, y)
     draw_circle("pink", 20, x, y + 10)  # Inner ear
 
+def draw_body():
+    draw_circle("gray", 70, 0, -90)  # Body
+
 def draw_face():
-    draw_circle("gray", 60, 0, -30)  # Head
+    draw_circle("gray", 60, 0, -30)  # Centered head
     draw_circle("black", 10, -25, -15)  # Left eye
     draw_circle("black", 10, 25, -15)   # Right eye
     draw_circle("white", 5, -25, -15)   # Left eye highlight
     draw_circle("white", 5, 25, -15)    # Right eye highlight
     draw_circle("pink", 15, 0, -40)      # Nose
-
-def draw_mouth():
-    turtle.penup()
-    turtle.goto(-10, -50)
-    turtle.pendown()
-    turtle.setheading(-60)
-    turtle.circle(10, 120)  # Mouth curve
-    turtle.penup()
-
-def draw_body():
-    draw_circle("gray", 70, 0, -90)  # Body
 
 def draw_tail():
     turtle.pendown()
@@ -39,15 +31,23 @@ def draw_tail():
     turtle.forward(50)  # Tail
     turtle.penup()
 
+def draw_limbs():
+    # Draw arms
+    draw_circle("gray", 20, -90, -70)  # Left arm
+    draw_circle("gray", 20, 90, -70)   # Right arm
+
+    # Draw legs
+    draw_circle("gray", 20, -40, -160)  # Left leg
+    draw_circle("gray", 20, 40, -160)   # Right leg
+
 def main():
     turtle.speed(3)
-    draw_body()
-    draw_tail()
-    draw_face()
-    draw_ear(-40, 20)  # Left ear
-    draw_ear(40, 20)   # Right ear
-    draw_mouth()
-   
+    draw_body()          # Draw body first
+    draw_ear(-40, 20)   # Left ear
+    draw_ear(40, 20)    # Right ear
+    draw_face()         # Draw face next
+    draw_limbs()        # Draw limbs
+    draw_tail()         # Draw tail last
     turtle.hideturtle()
     turtle.done()
 
